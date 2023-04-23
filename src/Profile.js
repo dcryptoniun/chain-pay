@@ -70,7 +70,7 @@ export default function Profile() {
             <div> Setting new User Name... please Check your Wallet</div>
           )}
           {isSuccess && (
-            <div className="gap-4">
+            <div className="gap-4 flex flex-col justify-center items-center">
               <h1>Successfully minted your NFT</h1>
               <div>
                 <a

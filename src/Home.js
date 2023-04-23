@@ -11,6 +11,7 @@ import {
   useWaitForTransaction,
 } from "wagmi";
 import { Web3Button } from "@web3modal/react";
+import Reqest from "./component/Reqest";
 
 function Home() {
   const inputProps = useInput();
@@ -33,17 +34,6 @@ function Home() {
     //   console.log("Settled", { data, error });
     // },
   });
-
-  const { data: fetchreqest } = useContractRead({
-    address: contractAddress,
-    abi: Abi,
-    functionName: "getMyRequests",
-    // watch: true,
-    args: [address],
-    select: (data) => data.map((arr) => arr.map(String)),
-  });
-
-  const [addresses, uints, strings1, strings2] = fetchreqest;
 
   const { config } = usePrepareContractWrite({
     address: contractAddress,
@@ -84,17 +74,7 @@ function Home() {
 
                   <h1>{userName}</h1>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <div className="flex flex-row gap-2">
-                    <span>
-                      Requested by=
-                      {strings2}:{addresses}
-                    </span>
-                  </div>
-
-                  <span>amount:{uints} Matic</span>
-                  <span>Message: {strings1}</span>
-                </div>
+                <Reqest />
 
                 <button
                   className="font-bold w-1/2 h-auto p-2 rounded outline hover:text-teal-400 hover:bg-teal-400/10 shadow-md  shadow-black dark:shadow-white hover:shadow-emerald-500 "
