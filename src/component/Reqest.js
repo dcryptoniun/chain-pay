@@ -18,6 +18,7 @@ function Request() {
     address: contractAddress,
     abi: Abi,
     functionName: "getMyRequests",
+    watch: true,
     args: [address],
     select: (data) => data.map((arr) => arr.map(String)),
   });
