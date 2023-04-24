@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import confi from "./config/Config.json";
-import Abi from "./config/Abi.json";
+import confi from "./contract/Config.json";
+import Abi from "./contract/Abi.json";
 import {
   useAccount,
   useContractRead,
@@ -44,7 +44,7 @@ export default function Profile() {
     args: [address],
   });
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center h-screen ">
       <h1 className="pb-8 text-3xl font-bold text-teal-400">PROFILE SETTING</h1>
       {isConnected ? (
         <div className="flex flex-col items-center justify-center gap-4 w-md">
@@ -52,11 +52,11 @@ export default function Profile() {
           <input
             variant="static"
             label="username"
-            className="p-2 border-2 border-teal-600 text-slate-500"
+            className="p-2 border-2 border-teal-600 rounded-xl text-slate-500"
             {...inputProps}
             placeholder=" new username"
           />
-          <span className="text-xs  opacity-60">
+          <span className="text-xs opacity-60">
             hint:empty value will remove the username
           </span>
           <button

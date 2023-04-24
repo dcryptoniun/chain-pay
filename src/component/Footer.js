@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="w-full flex justify-between p-2">
+    <div className="flex  text-black dark:text-white bg-[#ECF2FF] dark:bg-[#0f172a]  justify-between w-full p-2 h-fit">
       <h1>2023©ChainPay</h1>
       <h1>
         made with ❤️ by{" "}

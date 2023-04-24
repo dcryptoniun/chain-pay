@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import confi from "../config/Config.json";
-import Abi from "../config/Abi.json";
+import confi from "../contract/Config.json";
+import Abi from "../contract/Abi.json";
 
 import {
   useAccount,
@@ -48,7 +48,7 @@ function Request() {
   return (
     <>
       {isConnected ? (
-        <div className="flex flex-col items-center justify-center gap-5 p-2 border">
+        <div className="flex flex-col items-center justify-center w-full max-w-md gap-2 p-3 overflow-hidden ">
           {loading && <span>Loading data...</span>}
           {!loading && hasData && (
             <>
@@ -57,7 +57,7 @@ function Request() {
                   <div>
                     <span>Requested by {strings2}</span>
                   </div>
-                  <span className="overflow-hidden w-28">:{addresses}</span>
+                  <span className="text-xs">:{addresses}</span>
                   <span>Amount: {uints} Matic</span>
                   <span>Message: {strings1}</span>
                 </>

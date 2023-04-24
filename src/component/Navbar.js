@@ -1,7 +1,7 @@
 import { Web3Button, Web3NetworkSwitch } from "@web3modal/react";
 import { Link } from "react-router-dom";
 import ThemeSwitch from "./ThemeSwitch";
-import config from "../config/Config.json";
+import config from "../contract/Config.json";
 import ScanLogo from "../Image/matic_logo.svg";
 import GithubLogo from "../Image/github.svg";
 
@@ -9,20 +9,20 @@ function Navebar() {
   const scanLink = config.SCAN_LINK;
   const github = config.github;
   return (
-    <nav className=" h-fit   flex flex-col md:flex-row justify-center md:justify-between shadow-xl w-full rounded-xl">
-      <div className="mx-2 p-2 flex justify-center md:justify-start items-center">
-        <Link to="/" className=" font-bold text-2xl text-cyan-400 mx-2 px-2">
+    <nav className="flex flex-col justify-center w-full shadow-xl  h-fit md:flex-row md:justify-between rounded-xl">
+      <div className="flex items-center justify-center p-2 mx-2 md:justify-start">
+        <Link to="/" className="px-2 mx-2 text-2xl font-bold  text-cyan-400">
           CHAIN🔗PAY
         </Link>
         <div className="block md:hidden">
           <ThemeSwitch />
         </div>
       </div>
-      <div className=" flex flex-col md:flex-row ">
-        <div className="flex p-2 justify-around items-center px-4">
+      <div className="flex flex-col  md:flex-row">
+        <div className="flex items-center justify-around p-2 px-4">
           <Link
             to="/"
-            className="mx-2 px-2 p-1 hover:text-teal-400 hover:border-b-4 border-teal-500 rounded-xl"
+            className="p-1 px-2 mx-2 border-teal-500 hover:text-teal-400 hover:border-b-4 rounded-xl"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ function Navebar() {
             to={github}
             target="_blank"
             rel="noopener noreferrer"
-            className=" mx-2 px-2 p-1 hover:border-b-4 border-teal-500 rounded-xl "
+            className="p-1 px-2 mx-2 border-teal-500  hover:border-b-4 rounded-xl"
           >
             <img src={GithubLogo} alt="githublink" width={30} height={10} />
           </Link>
@@ -47,28 +47,28 @@ function Navebar() {
             to={scanLink}
             target="_blank"
             rel="noopener noreferrer"
-            className=" mx-2 px-2 p-1 hover:border-b-4 border-teal-500 rounded-xl "
+            className="p-1 px-2 mx-2 border-teal-500  hover:border-b-4 rounded-xl"
           >
             <img src={ScanLogo} alt="scanlink" width={30} height={10} />
           </Link>
-          <div className="relative p-2 flex justify-around">
-            <div className=" hidden md:block mx-1 px-1">
+          <div className="relative flex justify-around p-2">
+            <div className="hidden px-1 mx-1  md:block">
               <Web3NetworkSwitch />
             </div>
-            <div className=" mx-1 px-1  ">
+            <div className="px-1 mx-1 ">
               <Web3Button icon="hide" />
             </div>
-            {/* <div className=" mx-1 px-1 ">
+            {/* <div className="px-1 mx-1 ">
               <button onClick={() => disconnect()}>Disconnect</button>
             </div> */}
 
-            <div className="hidden md:block hover:border-b-4 border-teal-500 rounded-xl">
+            <div className="hidden border-teal-500 md:block hover:border-b-4 rounded-xl">
               <ThemeSwitch />
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
               <Link
                 to="/profile"
-                className="mx-2 px-2 p-1 hover:animate-spin  rounded-xl"
+                className="p-1 px-2 mx-2 hover:animate-spin rounded-xl"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
