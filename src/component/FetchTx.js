@@ -21,9 +21,9 @@ function FetchTx() {
 
   return (
     <>
-      <h1>Transaction History:</h1>
       {isConnected ? (
         <div className="flex flex-col justify-between gap-2 overflow-scroll-y ">
+          <h1>Transaction History:</h1>
           {loading && <span>Loading data...</span>}
           {!loading && hasData && (
             <>

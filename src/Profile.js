@@ -44,23 +44,23 @@ export default function Profile() {
     args: [address],
   });
   return (
-    <div className="flex justify-center items-center flex-col">
-      <h1 className="text-3xl font-bold pb-8 text-teal-400">PROFILE SETTING</h1>
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="pb-8 text-3xl font-bold text-teal-400">PROFILE SETTING</h1>
       {isConnected ? (
-        <div className="flex flex-col w-md justify-center items-center gap-4">
+        <div className="flex flex-col items-center justify-center gap-4 w-md">
           <h1 className="text-xl">{userName}</h1>
           <input
             variant="static"
             label="username"
-            className="text-slate-500 border-2 border-teal-600 p-2"
+            className="p-2 border-2 border-teal-600 text-slate-500"
             {...inputProps}
             placeholder=" new username"
           />
-          <span className=" text-xs opacity-60">
+          <span className="text-xs  opacity-60">
             hint:empty value will remove the username
           </span>
           <button
-            className="font-bold w-md h-auto p-2 rounded outline hover:text-teal-400 hover:bg-teal-400/10 shadow-md  shadow-black dark:shadow-white hover:shadow-emerald-500 "
+            className="h-auto p-2 font-bold rounded shadow-md w-md outline hover:text-teal-400 hover:bg-teal-400/10 shadow-black dark:shadow-white hover:shadow-emerald-500 "
             disabled={!write || isLoading}
             onClick={() => write?.()}
           >
@@ -70,14 +70,14 @@ export default function Profile() {
             <div> Setting new User Name... please Check your Wallet</div>
           )}
           {isSuccess && (
-            <div className="gap-4 flex flex-col justify-center items-center">
-              <h1>Successfully minted your NFT</h1>
+            <div className="flex flex-col items-center justify-center gap-4">
+              <h1>New User Name Set Successfully</h1>
               <div>
                 <a
                   href={`https://mumbai.polygonscan.com//tx/${data?.hash}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-500 p-2 rounded-2xl text-center"
+                  className="p-2 text-center bg-green-500 rounded-2xl"
                 >
                   view on Polygon scan
                 </a>
@@ -86,7 +86,7 @@ export default function Profile() {
           )}
         </div>
       ) : (
-        <div className="flex flex-col  items-center gap-4">
+        <div className="flex flex-col items-center gap-4">
           <h1> Please Connect Your wallet </h1>
           <Web3Button icon="hide" />
         </div>

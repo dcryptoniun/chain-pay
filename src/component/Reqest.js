@@ -48,30 +48,29 @@ function Request() {
   return (
     <>
       {isConnected ? (
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-5 p-2 border">
           {loading && <span>Loading data...</span>}
           {!loading && hasData && (
             <>
               {showData && (
                 <>
-                  <div className="flex flex-row gap-2">
-                    <span>
-                      Requested by {strings2}: {addresses}
-                    </span>
+                  <div>
+                    <span>Requested by {strings2}</span>
                   </div>
+                  <span className="overflow-hidden w-28">:{addresses}</span>
                   <span>Amount: {uints} Matic</span>
                   <span>Message: {strings1}</span>
                 </>
               )}
               <button
-                className="h-auto p-2 font-bold text-center rounded shadow-md w-fit outline hover:text-teal-400 hover:bg-teal-400/10 shadow-black dark:shadow-white hover:shadow-emerald-500"
+                className="h-auto p-2 font-bold text-center rounded shadow-md w-fit outline hover:text-teal-400 hover:bg-teal-400/10 shadow-black dark:shadow-green-500 hover:shadow-emerald-500"
                 onClick={toggleShowData}
               >
-                {showData ? "Hide Request" : "New Request"}
+                {showData ? "Hide Request" : "New Request Recieved"}
               </button>
             </>
           )}
-          {!loading && !hasData && <span>No Request available</span>}
+          {!loading && !hasData && <span>No New Request available</span>}
           {showData && (
             <>
               <button
