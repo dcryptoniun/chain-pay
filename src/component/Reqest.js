@@ -43,7 +43,7 @@ import Abi from "../config/Abi.json";
 import { useAccount, useContractRead } from "wagmi";
 
 function Request() {
-  const { address } = useAccount();
+  const { address, isConnected } = useAccount();
   const contractAddress = confi.CONTRACT_ADDRESS;
 
   const { data: fetchRequest, loading } = useContractRead({
@@ -65,31 +65,37 @@ function Request() {
   };
 
   return (
-    <div className="flex flex-col gap-2 justify-center items-center">
-      {loading && <span>Loading data...</span>}
-      {!loading && hasData && (
-        <>
-          {showData && (
+    <>
+      {isConnected ? (
+        <div className="flex flex-col items-center justify-center gap-2">
+          {loading && <span>Loading data...</span>}
+          {!loading && hasData && (
             <>
-              <div className="flex flex-row gap-2">
-                <span>
-                  Requested by {strings2}: {addresses}
-                </span>
-              </div>
-              <span>Amount: {uints} Matic</span>
-              <span>Message: {strings1}</span>
+              {showData && (
+                <>
+                  <div className="flex flex-row gap-2">
+                    <span>
+                      Requested by {strings2}: {addresses}
+                    </span>
+                  </div>
+                  <span>Amount: {uints} Matic</span>
+                  <span>Message: {strings1}</span>
+                </>
+              )}
+              <button
+                className="h-auto p-2 font-bold text-center rounded shadow-md w-fit outline hover:text-teal-400 hover:bg-teal-400/10 shadow-black dark:shadow-white hover:shadow-emerald-500"
+                onClick={toggleShowData}
+              >
+                {showData ? "Hide Request" : "Show Request"}
+              </button>
             </>
           )}
-          <button
-            className="font-bold w-fit text-center h-auto p-2 rounded outline hover:text-teal-400 hover:bg-teal-400/10 shadow-md  shadow-black dark:shadow-white hover:shadow-emerald-500"
-            onClick={toggleShowData}
-          >
-            {showData ? "Hide Request" : "Show Request"}
-          </button>
-        </>
+          {!loading && !hasData && <span>No Request available</span>}
+        </div>
+      ) : (
+        <div></div>
       )}
-      {!loading && !hasData && <span>No Request available</span>}
-    </div>
+    </>
   );
 }
 

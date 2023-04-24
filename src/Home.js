@@ -12,6 +12,7 @@ import {
 } from "wagmi";
 import { Web3Button } from "@web3modal/react";
 import Reqest from "./component/Reqest";
+import History from "./component/FetchTx";
 
 function Home() {
   const inputProps = useInput();
@@ -58,26 +59,26 @@ function Home() {
   }
 
   return (
-    <div className=" flex flex-col justify-center space-y-5  items-center  ">
+    <div className="flex flex-col items-center justify-center space-y-5 ">
       <div>
-        <h1 className="text-3xl dark:text-teal-300 font-bold font-mono ">
+        <h1 className="font-mono text-3xl font-bold dark:text-teal-300 ">
           CHAIN🔗PAY
         </h1>
       </div>
-      <div className="flex w-full   bg-black/5 dark:bg-white/5 max-w-sm md:max-w-3xl h-auto  flex-col justify-center md:justify-between p-5 items-center rounded-3xl">
-        <div className=" flex-grow w-full items-center text-center justify-center max-w-md h-auto m-1 p-5 flex-col rounded-2xl ">
+      <div className="flex flex-col items-center justify-center w-full h-auto max-w-sm p-5 bg-black/5 dark:bg-white/5 md:max-w-3xl md:justify-between rounded-3xl">
+        <div className="flex-col items-center justify-center flex-grow w-full h-auto max-w-md p-5 m-1 text-center rounded-2xl">
           {isConnected ? (
             <div>
-              <div className="flex flex-col justify-center items-center gap-4">
-                <div className=" flex flex-col justify-center  items-center bg-gradient-to-b from-teal-600 to-fuchsia-800  gap-2 text-center rounded-2xl m-1  w-28 h-auto  p-5 tracking-tight md:tracking-wide leading-5">
-                  <img src={User} alt="userlogo" className="w-8  " />
+              <div className="flex flex-col items-center justify-center gap-4">
+                <div className="flex flex-col items-center justify-center h-auto gap-2 p-5 m-1 leading-5 tracking-tight text-center bg-gradient-to-b from-teal-600 to-fuchsia-800 rounded-2xl w-28 md:tracking-wide">
+                  <img src={User} alt="userlogo" className="w-8 " />
 
                   <h1>{userName}</h1>
                 </div>
                 <Reqest />
 
                 <button
-                  className="font-bold w-1/2 h-auto p-2 rounded outline hover:text-teal-400 hover:bg-teal-400/10 shadow-md  shadow-black dark:shadow-white hover:shadow-emerald-500 "
+                  className="w-1/2 h-auto p-2 font-bold rounded shadow-md outline hover:text-teal-400 hover:bg-teal-400/10 shadow-black dark:shadow-white hover:shadow-emerald-500 "
                   disabled={!write || isLoading}
                   onClick={() => write?.()}
                 >
@@ -92,7 +93,7 @@ function Home() {
                         href={`https://mumbai.polygonscan.com//tx/${data?.hash}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-red-500 p-1"
+                        className="p-1 bg-red-500"
                       >
                         view on Polygon scan
                       </a>
@@ -100,6 +101,7 @@ function Home() {
                   </div>
                 )}
               </div>
+              <History />
             </div>
           ) : (
             <div>
