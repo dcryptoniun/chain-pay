@@ -24,7 +24,7 @@ function FetchTx() {
     <>
       {isConnected ? (
         <div className="flex flex-col bg-black/5 dark:bg-white/5 rounded-2xl w-full p-5  text-black min-h-full dark:text-white bg-[#ECF2FF] dark:bg-[#0f172a] justify-between gap-2 overflow-scroll-y ">
-          <h1 className="text-center text-transparent bg-gradient-to-r bg-clip-text from-green-500 to-red-500">
+          <h1 className="text-center text-transparent b bg-clip-text bg-gradient-to-t from-teal-300 to-fuchsia-300 hover:bg-gradient-to-b">
             Transaction History:
           </h1>
           {loading && <span>Loading data...</span>}

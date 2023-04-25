@@ -38,8 +38,8 @@ function SendMatic() {
   };
   return (
     <>
-      <div>
-        <h1>Send Matic without Request</h1>
+      <div className="flex flex-col gap-4">
+        <h1 className="text-center">Send Matic without Request</h1>
         {isConnected ? (
           <div>
             <form
@@ -50,7 +50,7 @@ function SendMatic() {
                 Address:
                 <input
                   type="text"
-                  className="border-2 border-teal-300 rounded-xl text-slate-500"
+                  className="border-2 border-teal-300 rounded-lg text-slate-500"
                   placeholder="wallet add...."
                   value={sendAddress}
                   onChange={(e) => setsendAddress(e.target.value)}
@@ -82,7 +82,7 @@ function SendMatic() {
                   min="1"
                   step="1"
                   placeholder="1"
-                  className="border-2 border-teal-300 rounded-xl text-slate-500"
+                  className="border-2 border-teal-300 rounded-lg text-slate-500"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                 />
@@ -107,7 +107,7 @@ function SendMatic() {
                 </span>
               </label>
               <button
-                className="h-auto p-2 font-bold rounded shadow-md w-md outline hover:text-teal-400 hover:bg-teal-400/10 shadow-black dark:shadow-white hover:shadow-emerald-500"
+                className="w-auto h-auto p-2 font-bold rounded shadow-md outline hover:text-teal-400 hover:bg-teal-400/10 shadow-black dark:shadow-white hover:shadow-emerald-500"
                 disabled={!write || isLoading}
                 type="submit"
               >

@@ -9,16 +9,19 @@ function Navebar() {
   const scanLink = config.SCAN_LINK;
   const github = config.github;
   return (
-    <nav className="flex flex-col justify-center w-full shadow-xl  h-fit md:flex-row md:justify-between rounded-xl">
+    <nav className="flex flex-col justify-center w-full shadow-xl h-fit md:flex-row md:justify-between rounded-xl">
       <div className="flex items-center justify-center p-2 mx-2 md:justify-start">
-        <Link to="/" className="px-2 mx-2 text-2xl font-bold  text-cyan-400">
-          CHAIN🔗PAY
+        <Link to="/">
+          <span className="px-2 mx-2 text-2xl text-transparent bg-clip-text bg-gradient-to-t from-teal-300 to-fuchsia-300 hover:bg-gradient-to-b">
+            {" "}
+            CHAIN🔗PAY
+          </span>
         </Link>
         <div className="block md:hidden">
           <ThemeSwitch />
         </div>
       </div>
-      <div className="flex flex-col  md:flex-row">
+      <div className="flex flex-col md:flex-row">
         <div className="flex items-center justify-around p-2 px-4">
           <Link
             to="/"
@@ -38,7 +41,7 @@ function Navebar() {
             to={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1 px-2 mx-2 border-teal-500  hover:border-b-4 rounded-xl"
+            className="p-1 px-2 mx-2 border-teal-500 hover:border-b-4 rounded-xl"
           >
             <img src={GithubLogo} alt="githublink" width={30} height={10} />
           </Link>
@@ -47,12 +50,12 @@ function Navebar() {
             to={scanLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1 px-2 mx-2 border-teal-500  hover:border-b-4 rounded-xl"
+            className="p-1 px-2 mx-2 border-teal-500 hover:border-b-4 rounded-xl"
           >
             <img src={ScanLogo} alt="scanlink" width={30} height={10} />
           </Link>
           <div className="relative flex justify-around p-2">
-            <div className="hidden px-1 mx-1  md:block">
+            <div className="hidden px-1 mx-1 md:block">
               <Web3NetworkSwitch />
             </div>
             <div className="px-1 mx-1 ">
@@ -67,7 +70,7 @@ function Navebar() {
             </div>
             <div className="flex items-center justify-center">
               <Link
-                to="/profile"
+                to="/settings"
                 className="p-1 px-2 mx-2 hover:animate-spin rounded-xl"
               >
                 <svg

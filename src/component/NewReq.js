@@ -59,7 +59,7 @@ function NewReq() {
                     Address:
                     <input
                       type="text"
-                      className="border-2 border-teal-300 rounded-xl text-slate-500"
+                      className="border-2 border-teal-300 rounded-lg text-slate-500"
                       placeholder="wallet add...."
                       value={reqAddress}
                       onChange={(e) => setReqAddress(e.target.value)}
@@ -90,7 +90,7 @@ function NewReq() {
                       type="amount"
                       min="1"
                       step="1"
-                      className="border-2 border-teal-300 rounded-xl text-slate-500"
+                      className="border-2 border-teal-300 rounded-lg text-slate-500"
                       value={amount}
                       onChange={(e) => setAmount(e.target.value)}
                     />
@@ -118,7 +118,7 @@ function NewReq() {
                     Message:
                     <input
                       type="text"
-                      className="border-2 border-teal-300 rounded-xl text-slate-500"
+                      className="border-2 border-teal-300 rounded-lg text-slate-500"
                       placeholder="message...."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}

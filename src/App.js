@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./component/Footer";
 import Navebar from "./component/Navbar";
 import Home from "./Home";
-import Profile from "./Profile";
+import Settings from "./Settings";
 import Info from "./Info";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" Component={Home} />
 
-          <Route path="/profile" Component={Profile} />
+          <Route path="/settings" Component={Settings} />
         </Routes>
         <section className="">
           <Info />

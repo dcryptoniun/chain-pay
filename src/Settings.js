@@ -10,7 +10,7 @@ import {
 } from "wagmi";
 import { Web3Button } from "@web3modal/react";
 
-export default function Profile() {
+export default function Settings() {
   const inputProps = useInput();
   const { address, isConnected } = useAccount();
   const contractAddress = confi.CONTRACT_ADDRESS;

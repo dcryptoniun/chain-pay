@@ -64,14 +64,16 @@ function Request() {
                 </>
               )}
               <button
-                className="h-auto p-2 font-bold text-center rounded shadow-md w-fit outline hover:text-teal-400 hover:bg-teal-400/10 shadow-black dark:shadow-green-500 hover:shadow-emerald-500"
+                className="h-auto p-2 font-bold text-center rounded shadow-md w-fit outline hover:text-teal-400 shadow-black dark:shadow-green-500 hover:shadow-emerald-500"
                 onClick={toggleShowData}
               >
                 {showData ? "Hide Request" : "New Request Recieved"}
               </button>
             </>
           )}
-          {!loading && !hasData && <span>No New Request available</span>}
+          {!loading && !hasData && (
+            <span className="text-xs">No New Request available</span>
+          )}
           {showData && (
             <>
               <button
